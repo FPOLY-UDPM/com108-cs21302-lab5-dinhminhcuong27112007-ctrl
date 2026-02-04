@@ -1,7 +1,7 @@
 /******************************************************************************
- * Họ và tên: [ĐIỀN TÊN TẠI ĐÂY]
- * MSSV:      [ĐIỀN MSSV TẠI ĐÂY]
- * Lớp:       [ĐIỀN LỚP TẠI ĐÂY]
+ * Họ và tên: [Đinh Minh Cường]
+ * MSSV:      [PS48680]
+ * Lớp:       [CS21302]
  *****************************************************************************/
 
 //  BÀI 2: XÂY DỰNG HÀM TÍNH NĂM NHUẬN 
@@ -12,12 +12,27 @@
  
 #include <stdio.h>
 
-//Tạo hàm 
+// Tạo hàm kiểm tra năm nhuận
+int laNamNhuan(int nam) {
+    if (nam % 400 == 0 || (nam % 4 == 0 && nam % 100 != 0)) {
+        return 1; // là năm nhuận
+    }
+    return 0; // không phải năm nhuận
+}
 
 int main() {
+    int nam;
 
-    // //Gọi hàm trong hàm main 
-    
+    printf("Nhap nam: ");
+    scanf("%d", &nam);
+
+    // Gọi hàm trong main
+    if (laNamNhuan(nam)) {
+        printf("%d la nam nhuan\n", nam);
+    } else {
+        printf("%d khong phai la nam nhuan\n", nam);
+    }
+
     return 0;
 }
 
